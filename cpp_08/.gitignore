@@ -1,0 +1,24 @@
+# binary stuff
+*.o
+obj
+a.out*
+span
+
+# libraries
+*.a
+*.dylib
+*.swiftdoc
+*.swiftmodule
+
+# macos garbage
+.DS_Store
+
+# vim utils
+*.swp
+*.vim
+
+# ctags
+tags
+
+# debug
+.gdb_history

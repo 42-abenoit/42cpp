@@ -1,0 +1,35 @@
+CPP_SRC += Bureaucrat.cpp
+CPP_SRC += Form.cpp
+CPP_SRC += ShrubberyCreationForm.cpp
+CPP_SRC += RobotomyRequestForm.cpp
+CPP_SRC += PresidentialPardonForm.cpp
+CPP_SRC += Intern.cpp
+CPP_SRC += main.cpp
+
+CPP_OBJ = $(CPP_SRC:.cpp=.o)
+
+CC = clang++
+
+RM = rm -f
+
+CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
+
+NAME = OfficeLife
+
+all:	$(NAME)
+
+$(NAME):	$(CPP_OBJ)
+	$(CC) $(CPP_FLAGS) -o $(NAME) $(CPP_OBJ)
+
+%.o: %.cpp
+	$(CC) $(CPP_FLAGS) -c $< -o $@
+
+clean:
+	$(RM) $(CPP_OBJ)
+
+fclean:	clean
+	$(RM) $(NAME)
+
+re:	fclean all	
+
+.PHONY:	clean re fclean
